@@ -28,7 +28,7 @@ function Trap() {
 			// child and text
 			children.setNodeText(0, "");
 			children.setChildElement(0, (_, children) => {
-				children.setNodeText(0, "This are new you");
+				children.setNodeText(0, "It's new one");
 			});
 		});
 	});
