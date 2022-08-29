@@ -8,7 +8,9 @@ function Trap() {
 	
 	const setNewText = naiveFocus((newValue) => {
 		setBaseContext((_, children) => {
-			children.setNodeText(0, JSON.stringify(newValue));
+      if (newValue.update) {
+			  children.setNodeText(0, JSON.stringify(newValue));
+      }
 		});
 	});
 
