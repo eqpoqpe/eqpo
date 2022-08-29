@@ -1,4 +1,9 @@
-import { naiveCreate, naiveEvent, naiveFocus, naiveTemplateStore } from "tinreact";
+import {
+  naiveCreate,
+  naiveEvent,
+  naiveFocus,
+  naiveTemplateStore
+} from "tinreact";
 
 export default function TrapButton({ setContext }) {
   const [product, setProduct] = naiveCreate("div");
