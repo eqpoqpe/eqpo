@@ -20,7 +20,6 @@ export default function TrapButton({ setContext }) {
   };
   
   setOnClick(SP_FETCH);
-  
   setProduct((props, chilren) => {
     props.class = "trap-button";
     props.onClick = onFetchData;
