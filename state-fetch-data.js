@@ -6,7 +6,7 @@ export default function TrapButton({ setContext }) {
   const [fetcState, setFetchState] = naiveTemplateStore(false);
   
   const SP_FETCH = () => {
-    if (!fetchState) {
+    if (!fetchState.ready) {
       fetch("https://eqpo.ml/display.json", { methods: "GET" })
         .then((response) => response.json())
         .then((result) => {
