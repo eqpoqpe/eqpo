@@ -2,9 +2,6 @@
 ```js
 import { naiveCreate, naiveEvent } from "tinreact";
 
-/**
- * reaction without state
- */
 function Trap() {
 	const [product, setProduct] = naiveCreate("div");
 	const [baseContext, setBaseContext] = naiveCreate("p");
