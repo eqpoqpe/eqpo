@@ -1,4 +1,5 @@
 import { naiveCreate, naiveEvent } from "tinreact";
+import TrapButton from "TrapButton";
 
 function Say() {
   console.log("Say what");
@@ -57,6 +58,12 @@ function Trap() {
 
 		children.insert([22]);
 		children.appendChild(baseContext);
+    // children.appendChild(TrapButton(setBaseContext));
+    
+    // way on tinreact
+    children.appendChild(
+      createElement(TrapButton, setBaseContext)
+    );
 	});
 
 	// read only
