@@ -5,15 +5,19 @@ function Trap() {
 	const [baseContext, setBaseContext] = naiveCreate("p");
 	const [onText, setOnTextEvent] = naiveEvent("click");
 	const [onMounted, setOnMountedEvent] = naiveEvent("mounted");
+	
+	const setNewText = naiveFocus((newValue) => {
+		setBaseContext((_, children) => {
+			children.setNodeText(0, JSON.stringify(newValue));
+		});
+	});
 
 	setOnMountedEvent(() => {
 		fetch("https://eqpo.ml/display.json", { methods: "GET" })
 			.then((response) => res.json())
 			.then((result) => {
 				console.log(result);
-				setBaseContext((_, children) => {
-					children.setNodeText(0, JSON.stringify(result));
-				});
+				setNewText(result);
 			})
 			.catch((err) => {
 				console.warn(err);
