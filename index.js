@@ -1,9 +1,14 @@
 import { naiveCreate, naiveEvent } from "tinreact";
 
+function Say() {
+  console.log("Say what");
+}
+
 function Trap() {
 	const [product, setProduct] = naiveCreate("div");
 	const [baseContext, setBaseContext] = naiveCreate("p");
 	const [onText, setOnTextEvent] = naiveEvent("click");
+	const [onChangeColor, setOnChangeColorEvent] = naiveEvent("click");
 	const [onMounted, setOnMountedEvent] = naiveEvent("mounted");
 	
 	const setNewText = naiveFocus((newValue) => {
@@ -13,7 +18,8 @@ function Trap() {
       }
 		});
 	});
-
+  
+  setOnChangeColorEvent(Say);
 	setOnMountedEvent(() => {
 		fetch("https://eqpo.ml/display.json", { methods: "GET" })
 			.then((response) => res.json())
@@ -35,9 +41,13 @@ function Trap() {
 				children.setNodeText(0, "It's new one");
 			});
 		});
+    
+    setBaseContext((props) => { props.removeClick(Say); });
 	});
 
-	setBaseContext((_, children) => {
+	setBaseContext((props, children) => {
+    props.onClick = onChangeColor;
+    
 		children.insert(["G"]);
 	});
 
