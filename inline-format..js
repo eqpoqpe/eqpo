@@ -11,4 +11,10 @@ const _el = `
     p:text=free man here
     |
     p:text=free man there
+    >
+      div:class=wait-action-0
+      >
+        div:class=wait-action-1
+        >
+          div:class=wait-action-2
 `
