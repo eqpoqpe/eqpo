@@ -2,5 +2,5 @@
 /AwesomeCloud
   `- /app
        `- /settings
-           `- layout.json
+            `- layout.json
 ```
