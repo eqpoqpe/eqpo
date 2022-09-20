@@ -1,8 +1,12 @@
+import { naiveCreate, naiveState } from "tinreact";
+
 function Trap() {
   const [product, setProduct] = naiveCreate("div");
-  const [outlet, setOutlet] = naiveView();
+  const [ready, setReadyValue] = naiveState(0);
   
   setProduct((props, children) => {
-    children.appendChild(outlet);
-  })
+    children.insert([ready()])
+  });
+  
+  return product;
 }
